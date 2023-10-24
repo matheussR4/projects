@@ -1,0 +1,114 @@
+body{
+    /* background: rgb(15, 15, 71); */
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTfSa-UhoZpQLFXSfS5XgMAlp2he0AYY7mAg&usqp=CAU");
+}
+a{
+    color: rgb(0, 0, 0);
+    font-style: normal;
+    text-decoration: none;
+}
+h1{
+    color:rgb(52, 52, 182);
+    background-color: rgb(206, 206, 92);
+    margin:0 0 0 0;
+    border: 5px blue;
+    border-style: groove;
+    border-top-style: double;
+    border-bottom-style: double;
+}
+h4{
+    /* color:white; */
+    color:rgb(0, 0, 0);
+    margin: 10px;
+    margin-left: 2px;
+    font-style: normal;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: small;
+}
+h4 i{
+    color:rgb(0, 0, 0);
+}
+h4 a:hover{
+    color:rgb(3, 27, 240);
+    cursor:pointer;
+}
+.container{
+    width:90%;
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right:auto;
+    height:400px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap:15px;
+    grid-template-areas: "Origem Habitação Curiosidades";
+}
+.box{
+    background-color: grey;
+    border:3px solid rgb(231, 227, 4);
+    height: 300px;
+    padding: 5px;
+    text-align: justify;
+}
+#origem{
+    text-align: center;
+    font-weight: 800;
+    font-size: larger;
+}
+#habitacao{
+    text-align: center;
+    font-weight: 800;
+    font-size: larger;
+}
+.box2 p{
+    /* font-size: large; */
+    text-align: start;
+}
+.box2 p i{
+    text-align: justify;
+}
+#habitacao{
+    text-align: center;
+    font-weight: 800;
+    font-size: larger;
+}
+#curiosidades{
+    text-align: center;
+    font-weight: 800;
+    font-size: larger;
+}
+.txt-curiosidades{
+    display: flex;
+    flex-direction: column;
+    flex-wrap:nowrap;
+    height:300px;
+    overflow: scroll;
+}
+.txt-curiosidades p{
+    margin-right:5px;
+}
+.box:hover{
+    border:3px solid rgb(3, 27, 240);
+    cursor:pointer;
+}
+.fotos{
+    /* background-color: grey; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow: scroll;
+    border:3px solid rgb(3, 27, 240);
+    border-radius: 10px;
+    height:200px;
+}
+img{
+    height:150px;
+    margin-top:15px;
+    margin-left: 15px;
+    width:auto;
+    border:3px solid rgb(3,27,240);
+}
+img:hover{
+    border:3px solid yellow;
+    cursor:pointer;
+}
