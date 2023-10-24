@@ -1,0 +1,336 @@
+.top{
+    /* background-image:url("https://magazine.zarpo.com.br/wp-content/uploads/2018/09/25-pontos-turisticos-do-brasil-para-conhecer-agora-mesmo-2.jpg"); */
+   /*  width: 100%; */
+   background-image: url("https://www.viagenscinematograficas.com.br/wp-content/uploads/2019/05/Barreirinhas-Lencois-Maranhenses-Lagoa-Azul.jpg");
+   background-size: cover;
+   background-position:center;
+    margin-left:1px;
+    /* margin-top:-20px; */
+    height: 550px;
+    font-family: 'Roboto', sans-serif;
+}
+#contato{
+    background-color: rgb(47,85,114);
+}
+.nav-link{
+    color:white;
+}
+.container-fluid{
+    height:60px;
+    background-color: rgba(47,85,114,.3);
+    /* background-color: rgb(1, 54, 88);
+    opacity: calc(60%); */
+}
+nav{
+    /* background-color: rgba(47,85,114,.3); */
+    /* background-color: rgba(1, 54, 88,.0); */
+    height:60px;
+}
+.navbar-nav{
+    margin-left: 15% ;
+}
+.navbar-nav li{
+    margin-inline: 5px;
+}
+#realizando{
+    height: 90px;
+    width: 150px;
+    background-color: rgb(47,85,114);
+    text-align: center;
+    padding-top: 37px;
+    color: white;
+    margin-left: 250px;
+}
+#viagens{
+    position:relative;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    margin-top: 30px;
+    color: rgb(0, 63, 110);
+    font-size:70px;
+}
+#experiencia{
+    position:relative;
+    font-family: 'Roboto', sans-serif;
+    margin-top: -5px;
+    text-align: center;
+    color: rgb(0, 63, 110);
+    font-size:45px;
+}
+#proporcionamos{
+    position:relative;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    margin-top: 25px;
+}
+#comece{
+    background-color: orange;
+    color: white;
+    height: 60px;
+    width: 150px;
+    text-align: center;
+    border: none;
+    margin-top: 20px;
+}
+.toptext{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+}
+hr{
+    position:relative;
+    border:5px solid rgb(47,85,114);
+    opacity: 100%;
+    margin-top:1px;
+}
+.viagem{
+    position: relative;
+    margin-top: 70px;
+    color: rgb(0, 63, 110);
+    font-size: 50px;
+    font-family: 'Roboto', sans-serif;
+}
+.desde{
+    color: rgb(247, 166, 17);
+    margin-top: 20px;
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 40px;
+}
+.mid{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    height: 1150px;
+    font-family: 'Roboto', sans-serif;
+}
+.comecou{
+    /* background-color: black; */
+    width: 70%;
+    height:900px;
+}
+#img1{
+   width: 100%;
+   height: 300px;
+   margin-bottom: 5px;
+} 
+#img2{
+   /* margin-top: 10px;*/
+   height: 300px;
+   width: 250px;
+   margin-right: 10px;
+}
+#veja{
+    color: rgb(0, 63, 110);
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+#como-comecou{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 10px;
+}
+p{
+    color: rgb(0, 63, 110);
+    text-align:justify;
+}
+#float2{
+    display: flex;
+    flex-direction: row;
+}
+/* #float{
+    margin-right: 10px;
+    margin-top: 50px;
+    height: 500px;
+    width:290px;
+    float: left;
+} */
+.parte3{
+    background-color: rgb(0, 63, 110);
+    height: 700px;
+    padding-top: 25px;
+    font-family: 'Roboto', sans-serif;
+}
+/* .container{
+    position: relative;
+    background-color: red;
+    margin-top: 300px;
+    margin-left: 500px;
+    width: 300px;
+    height:300px;
+} */
+.row{
+    /* background-color: black; */
+    /* border: 1px solid white; */
+    height:280px;
+}
+#nossosServicos{
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 400px;
+    color: white;
+}
+h3{
+    margin-top: 10px;
+    font-size: xx-large;
+    margin-left: 5px;
+}
+#tabela{
+    position: relative;
+    margin-top: 10px;
+    margin-left: 200px;
+    width: 700px;
+}
+.col{
+    margin: 3px;
+    /* border: 3px solid white; */
+    width: 250px;
+    display: flex;
+    flex-direction: row;
+}
+.imggrid{
+    height: 50px;
+    width: 50px;
+    margin-top: 10px;
+}
+h6{
+    position:relative;
+    color: white;
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+    font-stretch: narrower;
+    margin-left: 5px;
+}
+.gridtext{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+.pgrid{
+    color: white;
+    text-align: unset;
+}
+#pgrid2{
+    width: 270px;
+}
+#titulogrid4{
+    width:275px;
+    font-size: 28px;
+}
+.depoimentos{
+    position: absolute;
+    height:800px;
+    width: 100%;
+    background-image: url("https://img.freepik.com/fotos-gratis/ponte-sobre-o-lago-piva-montenegro_278455-10209.jpg?w=2000");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Roboto', sans-serif;
+}
+.opacity{
+    position: absolute;
+    background-color: rgba(255,255,255,0.4);
+    margin:0;
+    height:100%;
+    width: 100%;
+}
+.tituloDepoimento{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    margin-top: 100px;
+    margin-left: 300px;
+    align-items: center;
+}
+h4{
+    position: relative;
+    color: rgb(0, 63, 110);
+    font-size: 50px;
+    margin-top: 40px;
+    margin-left: 20px;
+}
+.grupoDeCards{
+    display: flex;
+    flex-direction: row;
+    margin-top: 225px;
+    margin-left: 150px;
+}
+.card{
+    background: none;
+    border: none;
+}
+.bd-placeholder-img{
+    position:absolute;
+    align-self: center;
+    margin-top: 30px;
+    margin-left: -30px;
+    border: 6px solid white;
+}
+.card-title{
+    text-align: center;
+    margin-top:15px;
+    font-size: 20px;
+    color: rgb(0, 63, 110);
+}
+.qtdViagens{
+    color:orange;
+    text-align: center;
+    font-size: 18px;
+}
+.card-text{
+    text-align: unset;
+}
+.card-body{
+    position: static;
+    background-color: rgba(255, 255, 255, 0.7);
+    height: 400px;
+    width: 250px;
+    margin-top: 150px;
+}
+#card2{
+    position: relative;
+    margin-left: 300px;
+}
+#card3{
+    position: relative;
+    margin-left: 600px;
+}
+footer{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    margin-top: 800px;
+    height: 50px;
+    width:100%;
+    background-color: rgb(0, 63, 110);
+    align-items:center;
+    font-family: 'Roboto', sans-serif;
+}
+#btnEntreemContato{
+    background-color: orange;
+    margin-left: 30px;
+    height: 40px;
+    border: none;
+    color: white;
+}
+#pFooter{
+    margin-left: 300px;
+    margin-top: 15px;
+    font-size: 16px;
+    color: white;
+}
+#footerContainer{
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+}
