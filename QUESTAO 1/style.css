@@ -1,0 +1,110 @@
+header p{
+    font-style: normal;
+    font-size:18;
+    color: black;
+}
+header p i{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18;
+    font-style: normal;
+    color:rgb(29, 223, 29);
+}
+header p i .aventura:hover{
+    color: rgb(240, 253, 55);
+    cursor:pointer;
+}
+header p i .drama:hover{
+    color: orange;
+    cursor:pointer;
+}
+header p i .ficcao:hover{
+    color: rgb(255,0,50);
+    cursor:pointer;
+}
+i a{
+    text-decoration: none;
+    font-style: normal;
+    color:rgb(29, 223, 29);
+}
+.bloco-aventura{
+    margin:auto;
+    height: 200px;
+    width:90%;
+    background-color: grey;
+    border-style: inset;
+    border-color: yellow;
+    border-width: 5px;
+    margin-top:10px;
+}
+.bloco-aventura h3{
+    position:relative;
+    width:150px;
+    height:50px;
+    margin-left:55px;
+    text-align:center;
+    padding-top: 25px;
+    margin-top:-5px;
+    background-color: yellow;
+}
+.bloco-aventura ul{
+    font-size: 18;
+    margin-left: 60px;
+}
+
+.bloco-aventura ul li{
+    margin-bottom:5px;
+}
+.bloco-drama{
+    margin:auto;
+    height: 200px;
+    width:90%;
+    background-color: grey;
+    border-style: inset;
+    border-color: orange;
+    border-width: 5px;
+    margin-top:10px;
+}
+.bloco-drama h3{
+    position:relative;
+    width:150px;
+    height:50px;
+    margin-left:55px;
+    text-align:center;
+    padding-top: 25px;
+    margin-top:-5px;
+    background-color: orange;
+}
+.bloco-drama ul{
+    font-size: 18;
+    margin-left: 60px;
+}
+.bloco-drama ul li{
+    margin-bottom:5px;
+}
+.bloco-ficcao{
+    margin:auto;
+    height: 200px;
+    width:90%;
+    background-color: grey;
+    border-style: inset;
+    border-color: red;
+    border-width: 5px;
+    margin-top:10px;
+}
+.bloco-ficcao h3{
+    position:relative;
+    width:150px;
+    height:50px;
+    margin-left:55px;
+    text-align:center;
+    padding-top: 25px;
+    margin-top:-5px;
+    background-color: red;
+}
+.bloco-ficcao ul{
+    font-size: 18;
+    margin-left: 60px;
+}
+.bloco-ficcao ul li{
+    margin-bottom:5px;
+}
