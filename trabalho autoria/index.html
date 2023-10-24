@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="https://cdn.w600.comps.canstockphoto.com.br/programador-trabalhando-computer-vetor-eps_csp42957481.jpg">
+    <title>Questões</title>
+</head>
+<body>
+
+    <form id="buscaQuestao">
+        <label for="selecionaQuestao">Selecione a Questão:</label>
+        <select name="selecionaQuestao" id="selecionaQuestao" >
+            <option value="1">Questão 1</option>
+            <option value="2">Questão 2</option>
+            <option value="3">Questão 3</option>
+            <option value="4">Questão 4</option>
+            <option value="5">Questão 5</option>
+        </select>
+        <button id="buscar" class="btn btn-primary">Buscar</button>
+    </form>
+
+
+    <div class="questao1">
+            <table>
+                <tr>
+                    <th>Especificacao</th>
+                    <th>Código</th>
+                    <th>Preço</th>
+                </tr>
+                <tr>
+                    <td>Cachorro Quente</td>
+                    <td class="codigo">100</td>
+                    <td>1,20</td>
+                </tr>
+                <tr>
+                    <td>Bauru Simples</td>
+                    <td class="codigo">101</td>
+                    <td>1,30</td>
+                </tr>
+                <tr>
+                    <td>Bauru com Ovo</td>
+                    <td class="codigo">102</td>
+                    <td>1,50</td>
+                </tr>
+                <tr>
+                    <td>Hambúrguer</td>
+                    <td class="codigo">103</td>
+                    <td>1,20</td>
+                </tr>
+                <tr>
+                    <td>Cheeseburguer</td>
+                    <td class="codigo">104</td>
+                    <td>1,30</td>
+                </tr>
+                <tr>
+                    <td>Refrigerante</td>
+                    <td class="codigo">105</td>
+                    <td>1,00</td>
+                </tr>
+            </table>
+            <form>
+                <label for="#codigo">Código:</label>
+                <input type="number" id="codigo" min="100" max="106">
+                <label for="#quantidade">Quantidade:</label>
+                <input type="text" name="" id="quantidadeInserida">
+                <button id="calcular">Calcular</button>
+            </form>
+    </div>
+
+
+    <div class="questao2">
+        <form>
+            <label for="#numero1">Número 1:</label>
+            <input type="text" id="numero1">
+            <br>
+            <br>
+            <label for="#numero2">Número 2:</label>
+            <input type="text" name="" id="numero2">
+            <button id="calcular" class="btn btn-primary btn-sm">Calcular</button>
+        </form>
+        <table>
+            <tr>
+                <th>Operação</th>
+                <th>Valor</th>
+            </tr>
+        </table>
+    </div>
+
+
+    <div class="questao3">
+        <form action="">
+            <label for="data" id="lblData">Data:</label>
+            <input type="date" id="data">
+            <button>Converter</button>
+        </form>
+    </div>
+
+
+    <div class="questao4">
+        <div class="formulario">
+            <div id="titulo"> Lanchonete do IFMA</div>
+            <br>
+            <form action="">
+                <div id="nome">
+                    <label for="#txtNome">Nome do Cliente:</label>
+                    <input type="text" id="txtNome">
+                </div>
+                <div id="bebidas">
+                    <label >Bebidas:</label>
+                    <br>
+                    <fieldset class="radios">
+                        <div class="radio">
+                            <label for="#suco"> Suco</label>
+                            <input type="radio" value="suco" name="bebidas" id="suco">
+                        </div>
+                        <div class="radio">
+                        <label for="#suco"> Refrigerante</label>
+                        <input type="radio" value="refrigerante" name="bebidas" id="refrigerante">
+                        </div>
+                        <div class="radio">
+                        <label for="#suco"> Água</label>
+                        <input type="radio" value="agua" name="bebidas" id="agua">
+                        </div>
+                    </fieldset>
+                </div>
+                <div id="comidas">
+                    <label >Doces e Salgados:</label>
+                    <br>
+                    <fieldset class="checks">
+                        <div class="check">
+                            <label for="#bolo"> Bolo</label>
+                            <input type="checkbox" value="bolo" name="comidas" id="bolo">
+                        </div>
+                        <div class="check">
+                            <label for="#pastel"> Pastel</label>
+                            <input type="checkbox" value="pastel" name="comidas" id="pastel">
+                        </div>
+                        <div class="check">
+                            <label for="#torta"> Torta</label>
+                            <input type="checkbox" value="torta" name="comidas" id="torta">
+                        </div>
+                    </fieldset>
+                </div>
+                <div id="botoes">
+                    <button id="calcular">Calcular</button>
+                    <button id="limpar">Limpar</button>
+                </div>
+    
+            </form>
+        </div>
+    </div>
+
+
+    <div class="questao5">
+            <div id="calculadora">
+                <div class="valorSelecionado">
+                    <input type="text" id="txtValorSelecionado">
+                </div>
+                <select name="operacao" id="operacao">
+                    <option value="soma">Soma (+)</option>
+                    <option value="subtracao">Subtracao(-)</option>
+                    <option value="multiplicacao">Multiplicação (*)</option>
+                    <option value="divisao">Divisão (/)</option>
+                </select>
+                <form>
+                        <button  id="btn1">1</button>
+                        <button  id="btn2">2</button>
+                        <button  id="btn3">3</button>
+                        <button  id="btn4">4</button>
+                        <button  id="btn5">5</button>
+                        <button  id="btn6">6</button>
+                        <button  id="btn7">7</button>
+                        <button  id="btn8">8</button>
+                        <button id="btn9">9</button>
+                        <button  id="btn0">0</button>
+                        <button  id="btnC">C</button>
+                        <button  id="btnPonto">.</button>
+                        <button  id="btnOP">OP</button>
+                        <button  id="btnIgual">=</button>
+                </form>
+                <div class="resultado">
+                    <label for="#resultado">Resultado:</label>
+                    <input type="text" id="resultado">
+                </div>
+            </div>
+    </div>   
+    <script src="javascript.js"></script>
+</body>

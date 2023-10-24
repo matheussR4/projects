@@ -1,0 +1,330 @@
+body{
+    background-image: linear-gradient(to left,#264653,#2a9d8f);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#selecionaQuestao{
+    border-radius: 5px;
+    border: 2px solid greenyellow;
+}
+
+
+.questao1 table{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    border: 3px SOLID black;
+    margin-top: 30px; 
+    width: 400px;
+    /* animation: change 2s linear 3s infinite,border 1s infinite; */
+}
+.questao1 table th{
+    text-align: center;
+    border: 1px SOLID black;
+    color: black;
+    padding: 5px;
+}
+.questao1 table td {
+    text-align: center;
+    border: 1px SOLID black;
+    padding: 5px;
+    color: black;
+
+}
+.questao1 form{
+    width: 600px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.questao1 #calcular{
+    width: 100px;
+    height: 30px;
+    font-weight: bold;
+    border-radius: 5px;
+    border:3px solid black;
+    margin-top:10px;
+    margin-left:270px;
+} 
+.questao1 label{
+    color: black;
+    font-size: 20px;
+}
+.questao1 .pValor{
+    position: absolute;
+    width:150px;
+    height:50px;
+    margin-top:50px ;
+    margin-left:250px;
+    padding-top: 5px;
+    font-size:20px;
+    background-color:black;
+    border:5px solid #1e554f;
+    border-radius:3px;color:white;
+    text-align:center; 
+    animation-name:surgir; 
+    animation-duration:2s;
+}
+/* #roda{
+    animation: gira;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+} */
+
+/* @keyframes gira{
+    0%{
+        margin:30px 400px;
+        border-radius: 50%;
+        border: 3px solid blue;
+        height:30px;
+        width: 30px;
+        border-top: none;
+    }
+    25%{
+        margin:30px 400px;
+        border-radius: 50%;
+        border: 3px solid blue;
+        height:30px;
+        width: 30px;
+        border-right: none;
+    }
+    75%{
+        margin:30px 400px;
+        border-radius: 50%;
+        border: 3px solid blue;
+        height:30px;
+        width: 30px;
+        border-bottom: none;
+    }
+    100%{
+        margin:30px 400px;
+        border-radius: 50%;
+        border: 3px solid blue;
+        height:30px;
+        width: 30px;
+        border-left: none;
+    }
+}
+@keyframes change{
+    to{
+        background-image:linear-gradient(to bottom,blue,green);
+        opacity: 0.6;
+    }
+} */
+
+
+
+
+
+.questao2 form{
+    width:300px;
+    margin:100px auto;
+    margin-bottom: 0px;
+    font-weight: bold;
+}
+.questao2 form input{
+    border-radius: 3px;
+    border:2px solid black;
+}
+.questao2 table{
+    margin: 20px auto;
+    border: 3px solid black;
+}
+.questao2 table td{
+    text-align: center;
+    border: 1px solid black;
+}
+
+.questao2 table th{
+    text-align: center;
+    border: 1px solid black;
+}
+
+
+
+.questao3 form{
+    width: 500px;
+    margin:100px auto;
+    color:white;
+}
+
+.questao3 form button{
+    margin-top: 5px;
+    border-radius: 5px;
+    border-color: greenyellow;
+}
+
+.questao4 .formulario{
+    width:400px;
+    height: 230px;
+    margin: 100px auto;
+    background-color: grey;
+    border: 3px solid black;
+}
+.questao4 #titulo{
+    background-color: yellow;
+    border: 1px solid black;
+    padding: 3px;
+    width:200px;
+    position: absolute;
+    margin-top: -10px;
+    margin-left: 10px;
+}
+.questao4 #nome{
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+.questao4 #bebidas{
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+.questao4 #comidas{
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+.questao4 #botoes{
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+.questao4 .radios, .checks{
+    margin-left: 10px;
+    display: flex;
+    flex-direction: row;
+}
+.questao4 .radio{
+    margin-left: 20px;
+}
+.questao4 .check{
+    margin-left: 30px;
+}
+.questao4 #botoes{
+    margin-top: 15px;
+}
+.questao4 fieldset{
+    border: none;
+    padding: 1px;
+}
+
+
+
+.questao5 #calculadora{
+    height: 450px;
+    width: 300px;
+    background-image: linear-gradient(to left, rgb(46, 46, 223),rgb(19, 88, 121));
+    border: 5px solid rgb(6, 6, 110);
+    margin: 30px auto;
+}
+.questao5 #operacao{
+    margin-left: 90px;
+}
+.questao5 button{
+    height: 50px;
+    width: 80px;
+}
+.questao5 form{
+    display: grid;
+    height: 300px;
+    width:500px;
+    position: absolute;
+    grid-template-columns: 80px 80px 80px;
+    grid-template-rows: 50px 50px 50px 50px 50px;
+    grid-gap: 5px;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+.questao5 select{
+    height:30px;
+    width:130px;
+    margin-top: 10px;
+}
+.questao5 .resultado{
+    position: absolute;
+    margin-top: 290px;
+    margin-left: 15px;
+}
+.questao5 label{
+    color: white;
+}
+.questao5 #txtValorSelecionado{
+    height: 50px;
+    width: 250px;
+    margin-left: 20px;
+    margin-top: 10px;
+    font-size: xx-large;
+}
+.questao5 #resultado{
+    font-size: x-large;
+    width: 180px;
+}
+
+.questao1,.questao2,.questao3,.questao4,.questao5{
+    position: absolute;
+}
+
+.questao1{
+    margin-top: 60px;
+    margin-left: 360px;
+}
+.questao2{
+    margin-left: 500px;
+}
+.questao3{
+    margin-left: 500px;
+}
+
+.questao4{
+    margin-left: 440px;
+}
+.questao5{
+    margin-top: 30px;
+    margin-left: 500px;
+}
+#buscaQuestao{
+    margin-left: 400px;
+    font-size: xx-large;
+}
+
+#selecionaQuestao{
+    height: 30px;
+    font-size: large;
+}
+
+.invisivel{
+    visibility: hidden;
+    position: absolute;
+}
+
+.aparecer{
+    animation: aparecer 2s forwards;
+}
+
+.surgir{
+    animation: surgir 5s forwards;
+}
+.surgir1{
+    animation: surgir 1.5s forwards;
+}
+
+@keyframes aparecer{
+    from{
+        opacity: 0;
+        margin-left: -20px;
+    }
+    to{
+        transform: translateX();
+        opacity:1;
+    }
+}
+
+@keyframes surgir{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 1;
+    }
+}
