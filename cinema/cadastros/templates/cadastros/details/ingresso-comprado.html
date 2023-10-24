@@ -1,0 +1,44 @@
+{% extends 'paginas/template.html' %}
+{% include 'cadastro/form.html' %}
+{% load static %}
+{% block titulo %} 
+<title>Lista de Filmes</title>
+{% endblock %}
+{% block conteudo %} 
+    
+<div class="table-responsive">
+        <div class="detail-ingresso">
+            <div class="paragrafo-detail">
+                <h1>Ingresso Comprado com sucesso!</h1>
+                <p>{{ ingresso.comprador.perfil.nome_completo }}</p>
+                <p>{{ ingresso.sessao.filme.titulo }}</p>
+                <p>{{ ingresso.sessao.data }}</p>
+                <p>{{ ingresso.sessao.horario }}</p>
+                <p>{{ ingresso.sessao.sala }}</p>
+                <p>{{ ingresso.tipo }}</p>
+            </div>
+        </div>
+</div>
+{% endblock %}
+
+{% block pagination %}
+    {% if is_paginated %}
+        <div class="pagination">
+            <span class="page-links">
+                {% if page_obj.has_previous %}
+                    <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}" class="btn btn-warning btn-sm" title="Previous">previous</a>
+                {% endif %}
+                <span class="page-current">
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                </span>
+                {% if page_obj.has_next %}
+                    <a href="{{ request.path }}?page={{ page_obj.next_page_number }}" class="btn btn-warning btn-sm" title="Next">next</a>
+                {% endif %}
+            </span>
+        </div>
+    {% endif %}
+  {% endblock %}
+
+{% block scripts %}
+
+{% endblock %}

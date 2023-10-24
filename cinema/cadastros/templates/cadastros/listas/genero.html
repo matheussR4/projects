@@ -1,0 +1,100 @@
+{% extends 'paginas/template.html' %}
+{% load static %}
+{% block titulo %} 
+<title>Lista de Gêneros</title>
+{% endblock %}
+{% block conteudo %} 
+<br>
+<br>
+<div class="espaco">
+  <form class="d-flex" method="GET">
+      <input class="form-control mr-2" type="search" value="{{ request.GET.nome }}" placeholder="Pesquise o gênero" aria-label="Search" name="nome">
+      
+      <button class="btn btn-outline-success busca"  type="submit">Buscar</button>
+  </form>
+</div>
+    <br>
+    <br>
+    <h3 class="titulo-page">Lista de Gêneros registrados</h3>
+    <hr>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <tr>
+            <th>Nome</th>
+            <th>Descrição</th>
+            {% if perms.catalog.can_change_ingresso %}
+            <th>Opções</th>
+            {% endif %}
+        </tr>
+        {% for genero in object_list %} 
+        <tr>
+            <td>{{ genero.nome }}</td> 
+            <td>{{ genero.descricao }}</td>
+            {% if perms.catalog.can_change_ingresso %}
+            <td>
+                
+                <a href="{% url 'editar-genero' genero.pk %}" class="btn btn-warning btn-sm" title="Editar">Editar</a>
+                <a href="{% url 'excluir-genero' genero.pk %}" class="btn btn-danger btn-sm" title="Excluir">Excluir</a>
+                
+            </td>
+            {% endif %}
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="3">
+                Nenhum campo registro.
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}
+{% block pagination %}
+    {% if is_paginated %}
+        <div class="pagination">
+            <span class="page-links">
+                {% if page_obj.has_previous %}
+                    {% if request.GET.nome %}
+                    <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}&nome={{ request.GET.nome }}" class="btn btn-warning btn-sm" title="Previous">&laquo;previous</a>
+                    
+                    {% else %}
+                    <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}" class="btn btn-warning btn-sm" title="Previous">&laquo;previous</a>
+                    {% endif %}
+                {% endif %}
+                <span class="page-current">
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                </span>
+                {% if page_obj.has_next %}
+                    {% if request.GET.nome %}
+                    <a href="{{ request.path }}?page={{ page_obj.next_page_number }}&nome={{ request.GET.nome }}" class="btn btn-warning btn-sm" title="Next">next &raquo;</a>
+                    
+                    {% else %}
+                    <a href="{{ request.path }}?page={{ page_obj.next_page_number }}" class="btn btn-warning btn-sm" title="Next">next &raquo;</a>
+                    {% endif %}
+                {% endif %}
+            </span>
+        </div>
+    {% endif %}
+  {% endblock %}
+
+<!-- <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="..." class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="..." class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="..." class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div> -->

@@ -1,0 +1,22 @@
+{% extends 'paginas/template.html' %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% block titulo %}
+<title>Compra de Ingresso</title>
+{% endblock %}
+
+{% block conteudo %}
+<form action="" method="POST">
+    {% csrf_token %}
+
+    {{ form }}
+
+</form>
+{% endblock %}
+
+{% block scripts %}
+
+{% endblock %}

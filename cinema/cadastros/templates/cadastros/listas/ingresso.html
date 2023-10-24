@@ -1,0 +1,99 @@
+{% extends 'paginas/template.html' %}
+{% load static %}
+{% block titulo %} 
+<title>Lista de Ingressos</title>
+{% endblock %}
+{% block conteudo %} 
+<br>
+<br>
+<div class="espaco">
+    <form class="d-flex" method="GET">
+        <input class="form-control mr-2" type="search" value="{{ request.GET.nome }}" placeholder="Pesquise o filme do ingresso" aria-label="Search" name="nome">
+        
+        <button class="btn btn-outline-success busca"  type="submit" >Buscar</button>
+    </form>
+</div>
+    <br>
+    <br>
+    <h3 class="titulo-page">Lista de Ingressos registrados</h3>
+    <hr>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <tr>
+            <th>Sessão</th>
+            <th>Data</th>
+            <th>Horário</th>
+            <th>Filme</th>
+            <th>Tipo</th>
+            <th>Comprador</th>
+            <th>Opções</th>
+        </tr>
+        {% for ingresso in object_list %} 
+                <tr>
+                    <td>{{ ingresso.sessao.codigo }}</td> 
+                    <td>{{ ingresso.sessao.data }}</td> 
+                    <td>{{ ingresso.sessao.horario }}</td> 
+                    <td>{{ ingresso.sessao.filme }}</td> 
+                    <td>{{ ingresso.tipo }}</td>
+                    <td>{{ ingresso.comprador }}</td>
+                    <!-- <td>{{ ingresso.comprador.nome }}</td>  -->
+
+                    <td>
+                        {% if perms.catalog.can_change_ingresso %}
+                        <a href="{% url 'editar-ingresso' ingresso.pk %}" class="btn btn-warning btn-sm" title="Editar">Editar</a>
+                        <a href="{% url 'excluir-ingresso' ingresso.pk %}" class="btn btn-danger btn-sm" title="Excluir">Excluir</a>
+                        {% endif %}
+                        <a href="{% url 'detalhar-ingresso' ingresso.pk %}" class="btn btn-warning btn-sm" title="Visualizar">Visualizar</a>
+                    </td>
+                </tr>
+        {% empty %}
+        <tr>
+            <td colspan="3">
+                Nenhum campo registro.
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}
+
+{% block pagination %}
+    {% if is_paginated %}
+        <div class="pagination">
+            <span class="page-links">
+                {% if page_obj.has_previous %}
+                    {% if request.GET.nome %}
+                    <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}&nome={{ request.GET.nome }}" class="btn btn-warning btn-sm" title="Previous">&laquo;previous</a>
+                    
+                    {% else %}
+                    <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}" class="btn btn-warning btn-sm" title="Previous">&laquo;previous</a>
+                    {% endif %}
+                {% endif %}
+                <span class="page-current">
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                </span>
+                {% if page_obj.has_next %}
+                    {% if request.GET.nome %}
+                    <a href="{{ request.path }}?page={{ page_obj.next_page_number }}&nome={{ request.GET.nome }}" class="btn btn-warning btn-sm" title="Next">next &raquo;</a>
+                    
+                    {% else %}
+                    <a href="{{ request.path }}?page={{ page_obj.next_page_number }}" class="btn btn-warning btn-sm" title="Next">next &raquo;</a>
+                    {% endif %}
+                {% endif %}
+            </span>
+        </div>
+    {% endif %}
+  {% endblock %}
+
+{% block scripts %}
+<script>
+    let cmb=document.querySelector(select);
+    $(document).ready(function(){
+        for (i = 0; i < cmb.length; i = i + 1){
+            console.log(cmb.options[i]);
+        }
+}
+    );
+    
+</script>
+{% endblock %}

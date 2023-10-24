@@ -1,0 +1,93 @@
+{% extends 'paginas/template.html' %}
+{% load static %}
+{% block titulo %} 
+<title>Lista de Filmes</title>
+{% endblock %}
+{% block conteudo %} 
+<br>
+<br>
+<div class="espaco">
+    <form class="d-flex" method="GET">
+        <input class="form-control mr-2" type="search" value="{{ request.GET.nome }}" placeholder="Pesquise o nome do filme" aria-label="Search" name="nome">
+        
+        <button class="btn btn-outline-success busca"  type="submit">Buscar</button>
+    </form>
+</div>
+    <br>
+    <br>
+    <h3 class="titulo-page">Lista de Filmes registrados</h3>
+    <hr>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <tr>
+            <th>Titulo</th>
+            <th>Sinopse</th>
+            <th>Classsificação Indicativa</th>
+            <th>Ano</th>
+            <th>Diretor</th>
+            <th>Duração</th>
+            <th>Gênero</th>
+            <th>ID</th>
+            <th>Pôster</th>
+            {% if perms.catalog.can_change_ingresso %}
+            <th>Opções</th>
+            {% endif %}
+        </tr>
+        {% for filme in object_list %} 
+        <tr>
+            <td>{{ filme.titulo }}</td> 
+            <td>{{ filme.sinopse }}</td> 
+            <td>{{ filme.classificacaoIndicativa }}</td>
+            <td>{{ filme.ano }}</td> 
+            <td>{{ filme.diretor }}</td>
+            <td>{{ filme.duracao }}</td> 
+            <td>{{ filme.genero.nome }}</td>
+            <td>{{ filme.id }}</td>
+            <td><a href="{% url 'detalhar-filme' filme.pk %}"><img style='max-width:100px' src="{{ filme.poster.url }}"></a></td> 
+            
+            {% if perms.catalog.can_change_ingresso %}
+            <td>
+                
+                <a href="{% url 'editar-filme' filme.pk %}" class="btn btn-warning btn-sm" title="Editar">Editar</a>
+                <a href="{% url 'excluir-filme' filme.pk %}" class="btn btn-danger btn-sm" title="Excluir">Excluir</a>
+                
+            </td>
+            {% endif %}
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="9">
+                Nenhum campo registro.
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}
+
+{% block pagination %}
+    {% if is_paginated %}
+        <div class="pagination">
+            <span class="page-links">
+                {% if page_obj.has_previous %}
+                    {% if request.GET.nome %}
+                    <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}&nome={{ request.GET.nome }}" class="btn btn-warning btn-sm" title="Previous">&laquo;previous</a>
+                    
+                    {% else %}
+                    <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}" class="btn btn-warning btn-sm paginacao" title="Previous">&laquo;previous</a>
+                    {% endif %}
+                {% endif %}
+                <span class="page-current">
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                </span>
+                {% if page_obj.has_next %}
+                    {% if request.GET.nome %}
+                    <a href="{{ request.path }}?page={{ page_obj.next_page_number }}&nome={{ request.GET.nome }}" class="btn btn-warning btn-sm" title="Next">next &raquo;</a>
+                    {% else %}
+                    <a href="{{ request.path }}?page={{ page_obj.next_page_number }}" class="btn btn-warning btn-sm paginacao" title="Next">next &raquo;</a>
+                    {% endif %}
+                {% endif %}
+            </span>
+        </div>
+    {% endif %}
+  {% endblock %}

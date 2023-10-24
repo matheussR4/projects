@@ -1,0 +1,63 @@
+{% extends 'paginas/template.html' %}
+{% include 'cadastro/form.html' %}
+{% load static %}
+{% block titulo %} 
+<title>{{ filme.titulo }}</title>
+{% endblock %}
+{% block styles %}
+    <style>
+        .conteudo{
+            min-height: 200px;
+            max-height: 550px;
+        }
+        p{
+            font-family:Arial, Helvetica, sans-serif;
+            font-size: larger;
+            color:white;
+        }
+    </style>
+{% endblock %}
+{% block conteudo %} 
+<br>
+<div class="table-responsive">
+        <div class="detail-filme">
+            <img style='max-width:300px;min-width: 250px;max-height: 500px;' src="{{ filme.poster.url }}">
+            <div class="paragrafo-detail">
+                <h1>{{ filme.titulo }}</h1>
+                <p>Sinopse:<br>{{ filme.sinopse }}</p>
+                <p>Classsificação Indicativa: {{ filme.classificacaoIndicativa }}</p>
+                <p>Ano de Lançamento: {{ filme.ano }}</p>
+                <p>Diretor: {{ filme.diretor }}</p>
+                <p>Duração: {{ filme.duracao }}</p>
+                <p>Gênero: {{ filme.genero.nome }}</p>
+                <br>
+                <a href="{% url 'listar-sessao-cliente' %}" class="btn btn-primary">Comprar Ingresso</a>
+                <a href="{% url 'catalogo' %}" class="btn btn-primary">Voltar ao Catálogo</a>
+            </div>
+            
+        </div>
+        
+</div>
+{% endblock %}
+
+{% block pagination %}
+    {% if is_paginated %}
+        <div class="pagination">
+            <span class="page-links">
+                {% if page_obj.has_previous %}
+                    <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}" class="btn btn-warning btn-sm" title="Previous">previous</a>
+                {% endif %}
+                <span class="page-current">
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                </span>
+                {% if page_obj.has_next %}
+                    <a href="{{ request.path }}?page={{ page_obj.next_page_number }}" class="btn btn-warning btn-sm" title="Next">next</a>
+                {% endif %}
+            </span>
+        </div>
+    {% endif %}
+  {% endblock %}
+
+{% block scripts %}
+
+{% endblock %}

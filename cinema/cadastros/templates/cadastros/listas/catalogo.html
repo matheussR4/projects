@@ -1,0 +1,79 @@
+{% extends 'paginas/template.html' %}
+{% load static %}
+{% block titulo %} 
+<title>Catálogo</title>
+{% endblock %}
+{% block styles %}
+    <style>
+    .loginlogout{
+            margin-left:30vw;
+    }
+    .espaco input{
+    width: 250px;
+    }
+    </style>
+{% endblock %}
+{% block busca %}
+    <div class="espaco">
+        <form class="d-flex" method="GET">
+            <input class="form-control mr-2" type="search" value="{{ request.GET.nome }}" placeholder="Pesquise o nome do filme" aria-label="Search" name="nome">
+            
+            <button class="btn btn-outline-success busca"  type="submit" href="catalogo">Buscar</button>
+        </form>
+    </div>
+    {% endblock %}
+{% block conteudo %} 
+    <hr>
+    <div class="col-md-12 col-lg-12 conteudo">
+       <!-- <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel"> -->
+            
+           <!--  <div class="carousel-inner">
+                <div class="carousel-item active"> -->
+                    <div class="imagens">
+                            {% for filme in object_list %} 
+                            <a href="{% url 'detalhar-filme' filme.pk %}" class="img-link">
+                                <img style='max-width:150px;min-height: 225px;' src="{{ filme.poster.url }}" class="d-block poster" alt="..." >
+                            </a>
+                            {% empty %}
+                            Nenhum campo registro.
+                            {% endfor %}
+                    </div>
+                <!-- </div> -->
+                <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
+                    <!-- <span class="visually-hidden">Previous</span> -->
+                   <!--  </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span> -->
+                    <!-- <span class="visually-hidden">Next</span> -->
+                    <!-- </button> -->
+            <!-- </div> -->
+        <!-- </div> -->
+    </div>
+    {% block pagination %}
+    {% if is_paginated %}
+        <div class="pagination">
+            <span class="page-links">
+                {% if page_obj.has_previous %}
+                    {% if request.GET.nome %}
+                    <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}&nome={{ request.GET.nome }}" class="btn btn-warning btn-sm" title="Previous">&laquo;previous</a>
+                    
+                    {% else %}
+                    <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}" class="btn btn-warning btn-sm" title="Previous">&laquo;previous</a>
+                    {% endif %}
+                {% endif %}
+                <span class="page-current">
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                </span>
+                {% if page_obj.has_next %}
+                    {% if request.GET.nome %}
+                    <a href="{{ request.path }}?page={{ page_obj.next_page_number }}&nome={{ request.GET.nome }}" class="btn btn-warning btn-sm" title="Next">next &raquo;</a>
+                    {% else %}
+                    <a href="{{ request.path }}?page={{ page_obj.next_page_number }}" class="btn btn-warning btn-sm" title="Next">next&raquo;</a>
+                    {% endif %}
+                {% endif %}
+            </span>
+        </div>
+    {% endif %}
+  {% endblock %}
+{% endblock %}

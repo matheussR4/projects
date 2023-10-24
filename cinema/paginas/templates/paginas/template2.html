@@ -1,0 +1,149 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% block titulo %}
+    <title>Modelo</title>
+    {% endblock %}
+
+    <!-- CSS boxicons.com - https://boxicons.com/usage -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- CSS BootStrap -->
+    <!--link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"-->
+
+    
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <div class="container-xxl">
+        <div class="row">
+            <div class="col-md-10 col-lg-10 superior">
+                Barra superior da página
+                    </div>
+                    <div class="col-md-2 col-lg-2 superior">
+                    <div class="loginlogout">
+                {% if request.user.is_authenticated %}
+                    <p class="textologin"><br>Usuário(a): <strong>{{ user }}!<br>
+                    <a href="{% url 'logout' %}">Sair</a></strong>
+                    </p>
+                {% else %}
+                    <p class="textologin"><br><strong>
+                    <a href="{% url 'login' %}">Entrar</a> | <a href="{% url 'registrar' %}">Cadastrar-se</a></strong>
+                    </p>
+                {% endif %}
+                </div>
+                </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-lg-3 sidebar">
+                <!-- início do menu -->
+                <!--div class="sidebar"-->
+                <a href="#" class="logo-box">
+                    <i class='bx bxs-graduation'></i>
+                    <div class="logo-name">Escola</div>
+                </a>
+
+                <ul class="sidebar-list">
+                    <!-- Sem dropdown list -->
+                    <li>
+                        <div class="title">
+                            <a href="{% url 'inicio' %}" class="link">
+                                <i class="bx bx-grid-alt"></i>
+                                <span class="name">Home</span>
+                            </a>
+                            <!--i class="bx bxs-chevron-down"></i-->
+                        </div>
+                        <div class="submenu">
+                            <a href="{% url 'inicio' %}" class="link submenu-title">Home</a>
+                            <!-- Links de Submenu aqui -->
+                        </div>
+                    </li>
+
+                    <!-- Dropdown List -->
+                    <li class="dropdown">
+                        <div class="title">
+                            <a href="#" class="link">
+                                <i class="bx bx-grid-alt"></i>
+                                <span class="name">Cadastros</span>
+                            </a>
+                            <i class="bx bxs-chevron-down"></i>
+                        </div>
+                        <div class="submenu">
+                            <!-- Submenu aqui -->
+                            <a href="#" class="link submenu-title">Cadastros</a>
+                            <a href="{% url 'cadastrar-filme' %}" class="link">Filmes</a>
+                            <a href="{% url 'cadastrar-sessao' %}" class="link">Sessoes</a>
+                            <a href="{% url 'cadastrar-sala' %}" class="link">Salas</a>
+                            <a href="{% url 'cadastrar-ingresso' %}" class="link">Ingressos</a>
+                            <a href="{% url 'cadastrar-genero' %}" class="link">Gênero</a>
+                        </div>
+                    </li>
+
+                    <!-- Sem dropdown list -->
+                    <li>
+                        <div class="title">
+                            <a href="{% url 'sobre' %}" class="link">
+                                <i class="bx bx-grid-alt"></i>
+                                <span class="name">Sobre</span>
+                            </a>
+                            <!--i class="bx bxs-chevron-down"></i-->
+                        </div>
+                        <div class="submenu">
+                            <a href="{% url 'sobre' %}" class="link submenu-title">Sobre</a>
+                            <!-- Links de Submenu aqui -->
+                        </div>
+                    </li>
+
+                    <!-- Sem dropdown list -->
+                    <li>
+                        <div class="title">
+                            <a href="{% url 'contato' %}" class="link">
+                                <i class="bx bx-grid-alt"></i>
+                                <span class="name">Contato</span>
+                            </a>
+                            <!--i class="bx bxs-chevron-down"></i-->
+                        </div>
+                        <div class="submenu">
+                            <a href="{% url 'contato' %}" class="link submenu-title">Contato</a>
+                            <!-- Links de Submenu aqui -->
+                        </div>
+                    </li>
+                </ul>
+            <!--/div-->
+            <!-- fim do menu -->
+                
+            </div>
+            <div class="col-md-9 col-lg-9 conteudo">
+                {% block conteudo %}
+                    <h3>Conteúdo</h3>
+                {% endblock %}
+                {% block pagination %}
+                    
+                {% endblock %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-lg-12 rodape">
+                Rodapé
+            </div>
+        </div>
+    </div>
+ 
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+</body>
+
+</html>
